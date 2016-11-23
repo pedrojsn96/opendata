@@ -1,0 +1,23 @@
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :classifique %><br>
+    <%= select("comment", "rating",[['1', 1], ['2', 2],['3', 3], ['4', 4],['5',5]] , {disabled: 'restricted'}, class:"form-control") %>
+    <br>
+    <%= f.label :comente %><br>
+    <%= f.text_area :obs, class:"form-control" %>
+  </div>
+  <div class="col-md-1">
+    <%= f.submit "Enviar",class:"btn btn-sm btn-primary" %>
+  </div>
+<% end %>

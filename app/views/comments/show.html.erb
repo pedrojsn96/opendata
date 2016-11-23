@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Obrigado pelo Feedback! :)</h2>
+  <p id="notice"><%= notice %></p>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Seu Comentário</th>
+        <th>Sua Avaliação</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @comment.obs %></td>
+          <td><%= @comment.rating %></td>
+        </tr>
+    </tbody>
+  </table>
+  
+  <div>
+    <ul class="list-inline">
+      <li><%= button_to 'Editar',edit_comment_path(@comment), method: "get", class: "btn btn-sm btn-primary " %></li>
+      <li><%= button_to 'Voltar',root_path, method: "get", class: "btn btn-sm btn-primary " %></li>
+    </ul>
+  </div>
+  
+</div>
+
